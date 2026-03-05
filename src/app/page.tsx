@@ -1,65 +1,201 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import {
+  FileText,
+  Upload,
+  Search,
+  Users,
+  Star,
+  XCircle,
+  ArrowRight,
+  TrendingUp,
+} from 'lucide-react';
+import type { ResumeStats } from '@/lib/types';
+
+function StatCard({
+  icon: Icon,
+  label,
+  value,
+  gradient,
+  delay,
+}: {
+  icon: React.ElementType;
+  label: string;
+  value: number;
+  gradient: string;
+  delay: string;
+}) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div
+      className={`glass-card rounded-2xl p-6 animate-fade-in-up opacity-0 ${delay}`}
+    >
+      <div className="flex items-start justify-between">
+        <div>
+          <p className="text-sm font-medium text-muted-foreground">{label}</p>
+          <p className="mt-2 text-4xl font-bold tracking-tight animate-count-up">
+            {value}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div
+          className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} shadow-lg`}
+        >
+          <Icon className="h-6 w-6 text-white" />
         </div>
-      </main>
+      </div>
+    </div>
+  );
+}
+
+export default function DashboardPage() {
+  const [stats, setStats] = useState<ResumeStats>({
+    total: 0,
+    new_count: 0,
+    shortlisted_count: 0,
+    rejected_count: 0,
+    avg_experience: 0,
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadStats() {
+      try {
+        const { getResumeStats } = await import('@/app/actions/resumes');
+        const data = await getResumeStats();
+        setStats(data);
+      } catch {
+        // Use zero stats on error
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadStats();
+  }, []);
+
+  const statCards = [
+    {
+      icon: Users,
+      label: 'Total Resumes',
+      value: stats.total,
+      gradient: 'from-emerald-500 to-cyan-500',
+      delay: 'delay-100',
+    },
+    {
+      icon: FileText,
+      label: 'New',
+      value: stats.new_count,
+      gradient: 'from-blue-500 to-indigo-500',
+      delay: 'delay-200',
+    },
+    {
+      icon: Star,
+      label: 'Shortlisted',
+      value: stats.shortlisted_count,
+      gradient: 'from-amber-500 to-orange-500',
+      delay: 'delay-300',
+    },
+    {
+      icon: XCircle,
+      label: 'Rejected',
+      value: stats.rejected_count,
+      gradient: 'from-rose-500 to-pink-500',
+      delay: 'delay-400',
+    },
+  ];
+
+  return (
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="animate-fade-in-up opacity-0">
+        <h1 className="text-3xl font-bold tracking-tight">
+          Welcome to <span className="gradient-text">ResumeAI</span>
+        </h1>
+        <p className="mt-2 text-muted-foreground">
+          AI-powered resume intelligence platform with semantic search and smart matching.
+        </p>
+      </div>
+
+      {/* Stat Cards */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {loading
+          ? Array.from({ length: 4 }).map((_, i) => (
+            <div
+              key={i}
+              className="glass-card animate-shimmer rounded-2xl p-6 h-[120px]"
+            />
+          ))
+          : statCards.map((card) => (
+            <StatCard key={card.label} {...card} />
+          ))}
+      </div>
+
+      {/* Average Experience */}
+      {!loading && stats.avg_experience > 0 && (
+        <div className="glass-card rounded-2xl p-6 animate-fade-in-up opacity-0 delay-500">
+          <div className="flex items-center gap-3">
+            <TrendingUp className="h-5 w-5 text-primary" />
+            <span className="text-sm font-medium text-muted-foreground">
+              Average Experience:
+            </span>
+            <span className="text-lg font-bold">{stats.avg_experience} years</span>
+          </div>
+        </div>
+      )}
+
+      {/* Quick Actions */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3 animate-fade-in-up opacity-0 delay-500">
+        <Link href="/upload" className="group">
+          <div className="glass-card gradient-border rounded-2xl p-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 shadow-lg shadow-emerald-500/20 transition-transform group-hover:scale-110">
+                <Upload className="h-6 w-6 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold">Upload Resumes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Batch upload up to 10 PDFs
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/resumes" className="group">
+          <div className="glass-card gradient-border rounded-2xl p-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 shadow-lg shadow-blue-500/20 transition-transform group-hover:scale-110">
+                <FileText className="h-6 w-6 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold">Browse Resumes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Search, filter &amp; manage
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </div>
+          </div>
+        </Link>
+
+        <Link href="/match" className="group">
+          <div className="glass-card gradient-border rounded-2xl p-6">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 shadow-lg shadow-violet-500/20 transition-transform group-hover:scale-110">
+                <Search className="h-6 w-6 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold">Job Matching</h3>
+                <p className="text-sm text-muted-foreground">
+                  Semantic search candidates
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
+            </div>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }
