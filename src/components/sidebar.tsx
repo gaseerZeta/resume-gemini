@@ -23,17 +23,14 @@ export function Sidebar() {
     return (
         <aside className="fixed left-0 top-0 z-40 flex h-screen w-[260px] flex-col border-r border-border/50 bg-sidebar">
             {/* Logo */}
-            <div className="flex items-center gap-3 px-6 py-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 shadow-lg shadow-emerald-500/20">
-                    <Sparkles className="h-5 w-5 text-white" />
+            <div className="flex items-center gap-3 px-6 py-6 border-b border-border/50">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center">
+                    <img src="/zenita-logo.svg" alt="Zenita Logo" className="h-full w-full object-contain" />
                 </div>
                 <div>
-                    <h1 className="text-lg font-bold tracking-tight gradient-text">
-                        ResumeAI
+                    <h1 className="text-xl font-bold tracking-tight text-foreground">
+                        Zenita
                     </h1>
-                    <p className="text-[10px] font-medium uppercase tracking-widest text-muted-foreground">
-                        Intelligence Platform
-                    </p>
                 </div>
             </div>
 
@@ -48,8 +45,8 @@ export function Sidebar() {
                             key={item.href}
                             href={item.href}
                             className={`group flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200 ${isActive
-                                    ? 'bg-primary/10 text-primary shadow-sm'
-                                    : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+                                ? 'bg-primary/10 text-primary shadow-sm'
+                                : 'text-muted-foreground hover:bg-accent hover:text-foreground'
                                 }`}
                         >
                             <Icon

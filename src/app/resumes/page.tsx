@@ -35,7 +35,7 @@ import { toast } from 'sonner';
 
 const statusColors: Record<ResumeStatus, string> = {
     New: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
-    Shortlisted: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+    Shortlisted: 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
     Rejected: 'bg-rose-500/10 text-rose-500 border-rose-500/20',
 };
 
@@ -183,7 +183,7 @@ export default function ResumesPage() {
                                     >
                                         <TableCell>
                                             <div className="flex items-center gap-3">
-                                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20">
+                                                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
                                                     <FileText className="h-5 w-5 text-primary" />
                                                 </div>
                                                 <div>

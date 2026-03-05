@@ -157,8 +157,8 @@ export default function UploadPage() {
             {phase === 'idle' && (
                 <div
                     className={`animate-fade-in-up opacity-0 delay-100 relative rounded-2xl border-2 border-dashed p-12 text-center transition-all duration-300 ${dragActive
-                            ? 'border-primary bg-primary/5 scale-[1.02]'
-                            : 'border-border hover:border-primary/50 hover:bg-accent/50'
+                        ? 'border-primary bg-primary/5 scale-[1.02]'
+                        : 'border-border hover:border-primary/50 hover:bg-accent/50'
                         }`}
                     onDragEnter={handleDrag}
                     onDragLeave={handleDrag}
@@ -174,7 +174,7 @@ export default function UploadPage() {
                         id="file-upload"
                     />
                     <div className="flex flex-col items-center gap-4">
-                        <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 transition-transform ${dragActive ? 'animate-float' : ''}`}>
+                        <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 transition-transform ${dragActive ? 'animate-float' : ''}`}>
                             <Upload className="h-8 w-8 text-primary" />
                         </div>
                         <div>
@@ -212,10 +212,10 @@ export default function UploadPage() {
                                 style={{ animationDelay: `${index * 50}ms` }}
                             >
                                 <FileText className={`h-5 w-5 ${entry.status === 'success'
-                                        ? 'text-emerald-500'
-                                        : entry.status === 'error'
-                                            ? 'text-destructive'
-                                            : 'text-muted-foreground'
+                                    ? 'text-cyan-500'
+                                    : entry.status === 'error'
+                                        ? 'text-destructive'
+                                        : 'text-muted-foreground'
                                     }`} />
                                 <div className="flex-1 min-w-0">
                                     <p className="truncate text-sm font-medium">{entry.file.name}</p>
@@ -231,7 +231,7 @@ export default function UploadPage() {
                                         <Loader2 className="h-4 w-4 animate-spin text-primary" />
                                     )}
                                     {entry.status === 'success' && (
-                                        <CheckCircle2 className="h-5 w-5 text-emerald-500" />
+                                        <CheckCircle2 className="h-5 w-5 text-cyan-500" />
                                     )}
                                     {entry.status === 'error' && (
                                         <div className="flex items-center gap-1">
@@ -279,7 +279,7 @@ export default function UploadPage() {
                 <div className="glass-card rounded-2xl p-6 animate-fade-in-up opacity-0">
                     <div className="flex items-center gap-3 mb-4">
                         {result.failed === 0 ? (
-                            <CheckCircle2 className="h-6 w-6 text-emerald-500" />
+                            <CheckCircle2 className="h-6 w-6 text-cyan-500" />
                         ) : result.succeeded > 0 ? (
                             <AlertTriangle className="h-6 w-6 text-amber-500" />
                         ) : (
@@ -292,8 +292,8 @@ export default function UploadPage() {
                         </h3>
                     </div>
                     <div className="grid grid-cols-3 gap-4 text-center">
-                        <div className="rounded-xl bg-emerald-500/10 p-3">
-                            <p className="text-2xl font-bold text-emerald-500">{result.succeeded}</p>
+                        <div className="rounded-xl bg-cyan-500/10 p-3">
+                            <p className="text-2xl font-bold text-cyan-500">{result.succeeded}</p>
                             <p className="text-xs text-muted-foreground">Succeeded</p>
                         </div>
                         <div className="rounded-xl bg-destructive/10 p-3">
@@ -314,7 +314,7 @@ export default function UploadPage() {
                     <Button
                         size="lg"
                         onClick={handleUpload}
-                        className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-600 hover:to-cyan-600 shadow-lg shadow-emerald-500/20"
+                        className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/20"
                     >
                         <Upload className="mr-2 h-5 w-5" />
                         Process {files.length} Resume{files.length > 1 ? 's' : ''}
@@ -329,7 +329,7 @@ export default function UploadPage() {
                         >
                             Upload More
                         </Button>
-                        <Button size="lg" asChild className="bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:from-emerald-600 hover:to-cyan-600">
+                        <Button size="lg" asChild className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600">
                             <a href="/resumes">View All Resumes</a>
                         </Button>
                     </>

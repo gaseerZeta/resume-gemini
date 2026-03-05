@@ -352,7 +352,7 @@ export default function MatchPage() {
                                     size="lg"
                                     onClick={handleMatch}
                                     disabled={loading || jobDescription.trim().length < 10}
-                                    className="bg-gradient-to-r from-violet-500 to-purple-500 text-white hover:from-violet-600 hover:to-purple-600 shadow-lg shadow-violet-500/20"
+                                    className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/20"
                                 >
                                     {loading ? (
                                         <>
@@ -476,7 +476,7 @@ export default function MatchPage() {
                                                 </div>
                                                 <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                                                     <div
-                                                        className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-1000 ease-out"
+                                                        className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all duration-1000 ease-out"
                                                         style={{ width: `${match.match_score || 0}%` }}
                                                     />
                                                 </div>
@@ -533,7 +533,7 @@ export default function MatchPage() {
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 {!!saved.metadata?.weighted && (
-                                                    <Badge variant="outline" className="text-xs bg-violet-500/10 text-violet-400 border-violet-500/20">
+                                                    <Badge variant="outline" className="text-xs bg-cyan-500/10 text-cyan-400 border-cyan-500/20">
                                                         <SlidersHorizontal className="mr-1 h-3 w-3" />
                                                         Weighted
                                                     </Badge>

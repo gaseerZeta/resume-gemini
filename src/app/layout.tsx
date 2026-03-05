@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ResumeAI — AI Resume Intelligence Platform",
+  title: "Zenita — AI Resume Intelligence Platform",
   description:
     "Production-ready ATS platform with AI-powered resume parsing, semantic search, and intelligent job matching. Built with Next.js, Supabase, and Groq Llama-3.",
   keywords: ["ATS", "Resume Parser", "AI", "Groq", "Semantic Search", "pgvector"],

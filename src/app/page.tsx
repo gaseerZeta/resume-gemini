@@ -78,28 +78,28 @@ export default function DashboardPage() {
       icon: Users,
       label: 'Total Resumes',
       value: stats.total,
-      gradient: 'from-emerald-500 to-cyan-500',
+      gradient: 'from-cyan-500 to-blue-500',
       delay: 'delay-100',
     },
     {
       icon: FileText,
       label: 'New',
       value: stats.new_count,
-      gradient: 'from-blue-500 to-indigo-500',
+      gradient: 'from-sky-400 to-cyan-500',
       delay: 'delay-200',
     },
     {
       icon: Star,
       label: 'Shortlisted',
       value: stats.shortlisted_count,
-      gradient: 'from-amber-500 to-orange-500',
+      gradient: 'from-teal-400 to-emerald-500',
       delay: 'delay-300',
     },
     {
       icon: XCircle,
       label: 'Rejected',
       value: stats.rejected_count,
-      gradient: 'from-rose-500 to-pink-500',
+      gradient: 'from-slate-500 to-slate-700',
       delay: 'delay-400',
     },
   ];
@@ -109,10 +109,10 @@ export default function DashboardPage() {
       {/* Header */}
       <div className="animate-fade-in-up opacity-0">
         <h1 className="text-3xl font-bold tracking-tight">
-          Welcome to <span className="gradient-text">ResumeAI</span>
+          Welcome to <span className="gradient-text">Zenita</span>
         </h1>
         <p className="mt-2 text-muted-foreground">
-          AI-powered resume intelligence platform with semantic search and smart matching.
+          AI-powered tracking system with semantic search and smart matching.
         </p>
       </div>
 
@@ -148,7 +148,7 @@ export default function DashboardPage() {
         <Link href="/upload" className="group">
           <div className="glass-card gradient-border rounded-2xl p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 shadow-lg shadow-emerald-500/20 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/20 transition-transform group-hover:scale-110">
                 <Upload className="h-6 w-6 text-white" />
               </div>
               <div className="flex-1">
@@ -165,7 +165,7 @@ export default function DashboardPage() {
         <Link href="/resumes" className="group">
           <div className="glass-card gradient-border rounded-2xl p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 shadow-lg shadow-blue-500/20 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-cyan-500 shadow-lg shadow-sky-500/20 transition-transform group-hover:scale-110">
                 <FileText className="h-6 w-6 text-white" />
               </div>
               <div className="flex-1">
@@ -182,7 +182,7 @@ export default function DashboardPage() {
         <Link href="/match" className="group">
           <div className="glass-card gradient-border rounded-2xl p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 shadow-lg shadow-violet-500/20 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-400 to-emerald-500 shadow-lg shadow-teal-500/20 transition-transform group-hover:scale-110">
                 <Search className="h-6 w-6 text-white" />
               </div>
               <div className="flex-1">

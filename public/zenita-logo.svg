@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <!-- Dark Teal -->
+    <polygon id="top-left" points="200,40 100,100 200,150" fill="#1C7A9E" />
+    <polygon id="bottom-left" points="200,250 100,300 200,360" fill="#1C7A9E" />
+    
+    <!-- Medium Blue/Teal -->
+    <polygon id="top-right" points="200,40 310,100 200,150" fill="#2487AD" />
+    <polygon id="mid-top-right" points="200,150 310,100 310,210" fill="#2899C7" />
+    <polygon id="mid-right" points="200,150 310,210 200,260" fill="#4BADD4" />
+
+    <!-- Light Cyan/Teal -->
+    <polygon id="mid-top-left" points="200,150 100,210 200,260" fill="#5ECAE5" />
+    <polygon id="mid-left" points="100,210 100,300 200,250" fill="#4EABD0" />
+    
+    <!-- Dark Teal (Bottom) -->
+    <polygon id="bottom-right" points="200,260 310,310 200,360" fill="#176E8A" />
+  </defs>
+
+  <g transform="translate(0, 5)">
+    <!-- Top section -->
+    <use href="#top-left" />
+    <use href="#top-right" />
+    <use href="#mid-top-right" />
+    <use href="#mid-right" />
+    
+    <!-- Middle-Left section -->
+    <use href="#mid-top-left" />
+    <use href="#mid-left" />
+
+    <!-- Bottom section -->
+    <polygon points="200,260 100,300 200,360" fill="#1B8EAD" />
+    <polygon points="200,260 310,310 200,360" fill="#176E8A" />
+    
+    <!-- Center white dividers to mimic the flat design overlap lines -->
+    <line x1="200" y1="40" x2="200" y2="150" stroke="white" stroke-width="1.5" />
+    <line x1="200" y1="260" x2="200" y2="360" stroke="white" stroke-width="1.5" />
+    <line x1="200" y1="150" x2="310" y2="100" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <line x1="200" y1="150" x2="310" y2="210" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <line x1="200" y1="260" x2="100" y2="210" stroke="white" stroke-width="0.5" opacity="0.5"/>
+    <line x1="200" y1="150" x2="100" y2="210" stroke="#ffffff" stroke-width="0.5" opacity="0.5"/>
+  </g>
+</svg>

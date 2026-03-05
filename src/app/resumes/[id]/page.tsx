@@ -27,7 +27,7 @@ import { toast } from 'sonner';
 
 const statusColors: Record<ResumeStatus, string> = {
     New: 'bg-blue-500/10 text-blue-500 border-blue-500/20',
-    Shortlisted: 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20',
+    Shortlisted: 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20',
     Rejected: 'bg-rose-500/10 text-rose-500 border-rose-500/20',
 };
 
@@ -107,7 +107,7 @@ export default function ResumeDetailPage() {
             <div className="glass-card rounded-2xl p-8 animate-fade-in-up opacity-0">
                 <div className="flex items-start justify-between">
                     <div className="flex items-center gap-4">
-                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
                             <FileText className="h-8 w-8 text-primary" />
                         </div>
                         <div>
