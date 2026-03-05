@@ -290,13 +290,20 @@ export default function MatchPage() {
                                                         </SelectTrigger>
                                                         <SelectContent>
                                                             <SelectItem value="any">Any Location</SelectItem>
-                                                            <SelectItem value="Remote">Remote</SelectItem>
-                                                            <SelectItem value="On-site">On-site</SelectItem>
-                                                            <SelectItem value="Hybrid">Hybrid</SelectItem>
-                                                            <SelectItem value="NYC">NYC</SelectItem>
-                                                            <SelectItem value="SF Bay Area">SF Bay Area</SelectItem>
-                                                            <SelectItem value="London">London</SelectItem>
-                                                            <SelectItem value="Bangalore">Bangalore</SelectItem>
+                                                            <SelectItem value="Thiruvananthapuram">Thiruvananthapuram</SelectItem>
+                                                            <SelectItem value="Kollam">Kollam</SelectItem>
+                                                            <SelectItem value="Pathanamthitta">Pathanamthitta</SelectItem>
+                                                            <SelectItem value="Alappuzha">Alappuzha</SelectItem>
+                                                            <SelectItem value="Kottayam">Kottayam</SelectItem>
+                                                            <SelectItem value="Idukki">Idukki</SelectItem>
+                                                            <SelectItem value="Ernakulam">Ernakulam</SelectItem>
+                                                            <SelectItem value="Thrissur">Thrissur</SelectItem>
+                                                            <SelectItem value="Palakkad">Palakkad</SelectItem>
+                                                            <SelectItem value="Malappuram">Malappuram</SelectItem>
+                                                            <SelectItem value="Kozhikode">Kozhikode</SelectItem>
+                                                            <SelectItem value="Wayanad">Wayanad</SelectItem>
+                                                            <SelectItem value="Kannur">Kannur</SelectItem>
+                                                            <SelectItem value="Kasaragod">Kasaragod</SelectItem>
                                                         </SelectContent>
                                                     </Select>
                                                 </div>

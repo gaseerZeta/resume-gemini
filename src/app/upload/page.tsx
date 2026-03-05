@@ -119,6 +119,7 @@ export default function UploadPage() {
                 toast.error('All resumes failed to process.');
             }
         } catch (error) {
+            console.error("FULL UPLOAD ERROR:", error);
             toast.error('Upload failed. Please try again.');
             setFiles((prev) =>
                 prev.map((f) => ({
