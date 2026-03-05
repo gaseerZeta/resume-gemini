@@ -4,7 +4,8 @@ import { useState, useCallback } from 'react';
 import { Upload, FileText, CheckCircle2, XCircle, Loader2, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { batchUploadResumes } from '@/app/actions/upload';
+// import { batchUploadResumes } from '@/app/actions/upload';
+import { batchUploadResumes } from '../actions/upload';
 import type { BatchUploadResult, FileProcessingResult } from '@/lib/types';
 import { toast } from 'sonner';
 

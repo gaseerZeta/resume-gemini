@@ -1,15 +1,15 @@
 'use server';
 
-// ============================================
-// Batch Upload Server Action
-// Handles multi-file upload with concurrent processing
-// ============================================
 
 import { extractTextFromPDF } from '@/lib/pdf-extract';
 import { extractResumeData } from '@/lib/groq';
 import { generateResumeEmbedding } from '@/lib/embeddings';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
-import type { BatchUploadResult, FileProcessingResult } from '@/lib/types';
+import type { BatchUploadResult, FileProcessingResult } from '@/lib/types';// ============================================
+// Batch Upload Server Action
+// Handles multi-file upload with concurrent processing
+// ============================================
+
 
 const MAX_FILES = 10;
 const RATE_LIMIT_DELAY_MS = 500; // Delay between Groq API calls
