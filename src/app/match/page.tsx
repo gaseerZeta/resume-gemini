@@ -290,20 +290,34 @@ export default function MatchPage() {
                                                         </SelectTrigger>
                                                         <SelectContent>
                                                             <SelectItem value="any">Any Location</SelectItem>
-                                                            <SelectItem value="Thiruvananthapuram">Thiruvananthapuram</SelectItem>
-                                                            <SelectItem value="Kollam">Kollam</SelectItem>
-                                                            <SelectItem value="Pathanamthitta">Pathanamthitta</SelectItem>
-                                                            <SelectItem value="Alappuzha">Alappuzha</SelectItem>
-                                                            <SelectItem value="Kottayam">Kottayam</SelectItem>
-                                                            <SelectItem value="Idukki">Idukki</SelectItem>
-                                                            <SelectItem value="Ernakulam">Ernakulam</SelectItem>
-                                                            <SelectItem value="Thrissur">Thrissur</SelectItem>
-                                                            <SelectItem value="Palakkad">Palakkad</SelectItem>
-                                                            <SelectItem value="Malappuram">Malappuram</SelectItem>
-                                                            <SelectItem value="Kozhikode">Kozhikode</SelectItem>
-                                                            <SelectItem value="Wayanad">Wayanad</SelectItem>
-                                                            <SelectItem value="Kannur">Kannur</SelectItem>
-                                                            <SelectItem value="Kasaragod">Kasaragod</SelectItem>
+                                                            <SelectItem value="Andhra Pradesh">Andhra Pradesh</SelectItem>
+                                                            <SelectItem value="Arunachal Pradesh">Arunachal Pradesh</SelectItem>
+                                                            <SelectItem value="Assam">Assam</SelectItem>
+                                                            <SelectItem value="Bihar">Bihar</SelectItem>
+                                                            <SelectItem value="Chhattisgarh">Chhattisgarh</SelectItem>
+                                                            <SelectItem value="Goa">Goa</SelectItem>
+                                                            <SelectItem value="Gujarat">Gujarat</SelectItem>
+                                                            <SelectItem value="Haryana">Haryana</SelectItem>
+                                                            <SelectItem value="Himachal Pradesh">Himachal Pradesh</SelectItem>
+                                                            <SelectItem value="Jharkhand">Jharkhand</SelectItem>
+                                                            <SelectItem value="Karnataka">Karnataka</SelectItem>
+                                                            <SelectItem value="Kerala">Kerala</SelectItem>
+                                                            <SelectItem value="Madhya Pradesh">Madhya Pradesh</SelectItem>
+                                                            <SelectItem value="Maharashtra">Maharashtra</SelectItem>
+                                                            <SelectItem value="Manipur">Manipur</SelectItem>
+                                                            <SelectItem value="Meghalaya">Meghalaya</SelectItem>
+                                                            <SelectItem value="Mizoram">Mizoram</SelectItem>
+                                                            <SelectItem value="Nagaland">Nagaland</SelectItem>
+                                                            <SelectItem value="Odisha">Odisha</SelectItem>
+                                                            <SelectItem value="Punjab">Punjab</SelectItem>
+                                                            <SelectItem value="Rajasthan">Rajasthan</SelectItem>
+                                                            <SelectItem value="Sikkim">Sikkim</SelectItem>
+                                                            <SelectItem value="Tamil Nadu">Tamil Nadu</SelectItem>
+                                                            <SelectItem value="Telangana">Telangana</SelectItem>
+                                                            <SelectItem value="Tripura">Tripura</SelectItem>
+                                                            <SelectItem value="Uttar Pradesh">Uttar Pradesh</SelectItem>
+                                                            <SelectItem value="Uttarakhand">Uttarakhand</SelectItem>
+                                                            <SelectItem value="West Bengal">West Bengal</SelectItem>
                                                         </SelectContent>
                                                     </Select>
                                                 </div>

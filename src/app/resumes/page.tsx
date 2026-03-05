@@ -106,7 +106,7 @@ export default function ResumesPage() {
             </div>
 
             {/* Filters Bar */}
-            <div className="glass-card animate-fade-in-up opacity-0 delay-100 rounded-2xl p-4">
+            <div className="glass-card animate-fade-in-up opacity-0 delay-100 rounded-2xl p-4 overflow-visible relative">
                 <div className="flex flex-wrap items-center gap-4">
                     {/* Search */}
                     <div className="relative flex-1 min-w-[200px]">
@@ -125,7 +125,7 @@ export default function ResumesPage() {
                             <Filter className="mr-2 h-4 w-4" />
                             <SelectValue placeholder="Status" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent position="popper">
                             <SelectItem value="all">All Status</SelectItem>
                             <SelectItem value="New">New</SelectItem>
                             <SelectItem value="Shortlisted">Shortlisted</SelectItem>
